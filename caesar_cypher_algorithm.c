@@ -56,6 +56,10 @@ int main(int argc, char *argv[])
 }
 
 
+/* 
+ *  Outputs the correct format to follow for the terminal arguments 
+ *  together with their respective meaning
+ */
 void show_usage(void)
 {
     printf("\nUsage of \"caesar\"\n");
@@ -66,18 +70,29 @@ void show_usage(void)
 }
 
 
+/*
+ *  Checks wether the passed char is lowercase
+ */
 BOOL is_lowercase_alpha(char c)
 {
     return (( c >= 97 ) && ( c <= 122 ));
 }
 
 
+/*
+ *  Checks wether the passed char is uppercase
+ */
 BOOL is_uppercase_alpha(char c)
 {
     return (( c >= 65 ) && ( c <= 90 ));
 }
 
 
+/*
+ *  Performs a Caesar Cypher on the data passed with offset passed as key
+ *  (Decryption => mode = 0, Encryption => mode = 1) 
+ *  (As declared with the #define directives above)
+ */
 char * caesar_algorithm(int mode, char *data, int key)
 {
     int i, offset;
